@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import './update.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { updateUser2 } from '../../redux/userSlice';
+import { updateUser2, update, remove } from '../../redux/userSlice';
 
 export default function Update() {
   const [name, setName] = useState('');
@@ -12,9 +12,9 @@ export default function Update() {
   const handleClick = (e) => {
     e.preventDefault();
     // without API
-    // dispatch(update({ name, email }));
+    dispatch(update({ name, email }));
     // with API
-    dispatch(updateUser2({ name, email }));
+    // dispatch(updateUser2({ name, email }));
     console.log('update user', user);
   };
 
@@ -40,10 +40,7 @@ export default function Update() {
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-          <div className="formItem">
-            <label>Password</label>
-            <input className="formInput" type="password" />
-          </div>
+
           <button
             disabled={user.pending}
             className="updateButton"
