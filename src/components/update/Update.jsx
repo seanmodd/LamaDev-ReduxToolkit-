@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './update.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { updateUser2, update, remove } from '../../redux/userSlice';
@@ -17,6 +17,9 @@ export default function Update() {
     // dispatch(updateUser2({ name, email }));
     console.log('update user', user);
   };
+  useEffect(() => {
+    console.log('update user', user);
+  }, []);
 
   return (
     <div className="update">
@@ -27,7 +30,7 @@ export default function Update() {
             <input
               className="formInput"
               type="text"
-              // placeholder={user.user.name}
+              placeholder={user.name}
               onChange={(e) => setName(e.target.value)}
             />
           </div>
@@ -36,7 +39,7 @@ export default function Update() {
             <input
               className="formInput"
               type="text"
-              // placeholder={user.user.email}
+              placeholder={user.email}
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
