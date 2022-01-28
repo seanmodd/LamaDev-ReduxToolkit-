@@ -1,9 +1,6 @@
 import React, { useContext, useState } from 'react';
-import Warning from '../warning/Warning';
 import './update.css';
-// import { update, remove } from "../../redux/userSlice";
-import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { updateUser2 } from '../../redux/userSlice';
 
 export default function Update() {
@@ -18,6 +15,7 @@ export default function Update() {
     // dispatch(update({ name, email }));
     // with API
     dispatch(updateUser2({ name, email }));
+    console.log('update user', user);
   };
 
   return (

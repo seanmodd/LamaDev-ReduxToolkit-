@@ -46,6 +46,18 @@ form {
   padding: 5px;
   margin-top: 5px;
 }
+.formResult {
+  width: 30%;
+  text-align: center;
+  padding: 5px;
+  background-color:rgb(236, 249, 255);
+  text-color: black;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 55px;
+}
 
 .profilePic{
   margin-top: 10px;
